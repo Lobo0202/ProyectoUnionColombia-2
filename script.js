@@ -20,15 +20,13 @@ var users = [
 
 // Función para saber si el usuario existe
 function validarCredenciales() {
-  var username = document.getElementById("email").value; //obtener el valor del input con id="email"
-  //TAREA - Agregar el valor del input con id="contraseña" a una variable llamada contraseña
-
-  //una variable con valor false
+  var username = document.getElementById("email").value; 
+  var contraseña = document.getElementById("contraseña").value;
   var usuarioValido = false;
 
   // Buscar el usuario en el JSON logica que veremos 
   for (var i = 0; i < users.length; i++) {
-    if (users[i].usuario == username ) { //TAREA - && users[i].contraseña === contraseña) {
+    if (users[i].usuario == username && users[i].contraseña === contraseña) { 
       usuarioValido = true;
     }
   }
@@ -38,17 +36,18 @@ function validarCredenciales() {
 
 
 // Función para mostrar alerta
-function alertaCredeciales(event) 
+function alertaCredeciales(event) {
   event.preventDefault(); //evitar que se recargue la página
   
   if (validarCredenciales() == true) { //si la funcion validarCredenciales es true
     alert("¡Inicio de sesión exitoso!");
+  }
     if (validarCredenciales() == false) { //si la funcion validarCredenciales es true
       alert("¡La cago en la contraseña!");
   }
-
-  // TAREA - agregar if en caso de false
 }
+  // TAREA - agregar if en caso de false
+
 
 
 
